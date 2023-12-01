@@ -1,5 +1,9 @@
+import { SpeechBubbles } from "src/presentation/components"
+
 export const Home: React.FC = () => {
   return (
-    <h1>HOME</h1>
+    <>
+      <SpeechBubbles />
+    </>
   )
 }
