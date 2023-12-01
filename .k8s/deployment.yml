@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: avatar
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: avatar
+  template:
+    metadata:
+      labels:
+        app: avatar
+    spec:
+      containers:
+      - name: avatar
+        image: despossivel/avatar:TAG
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: regcred

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+docker-compose -f ./docker-compose.yml up -d --build
+docker commit avatar despossivel/avatar:latest
+docker push despossivel/avatar:latest
+docker rm avatar -f
+
+
+# kubectl delete --all pods
+# kubectl delete --all services
+# kubectl delete --all deployments
+
+
+kubectl apply -f ./.k8s/deployment.yml 
+
+kubectl apply -f ./.k8s/service.yml 

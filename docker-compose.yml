@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  avatar:
+    container_name: avatar
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - VITE_HOST_IO=https://avatar.tryvoice.ai
+      - VITE_KEYCLOAK_URL=http://192.168.0.108:8080/
+      - VITE_KEYCLOAK_REALM=tryvoice
+      - VITE_KEYCLOAK_CLIENTID=avatar
+      - VITE_SPEAKER_URL=https://avatar.tryvoice.ai/
+    ports:
+      - "84:80"
+    networks:
+      - tryvoice
+networks:
+  tryvoice:
+    driver: bridge
