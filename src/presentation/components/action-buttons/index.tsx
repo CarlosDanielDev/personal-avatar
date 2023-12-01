@@ -3,7 +3,7 @@ import './styles.css'
 
 import {
   useAudio,
-  useWebSocket
+  // useWebSocket
 } from 'tryvoice'
 
 import { useTranslation } from 'react-i18next'

@@ -5,7 +5,8 @@ RUN npm install -g npm@9.7.2
 COPY package.json ./
 RUN npm install --ignore-scripts --legacy-peer-deps
 RUN npm rebuild
- 
+# Instala TypeScript globalmente no container
+RUN npm install -g typescript
 COPY . .
 RUN npm run build
 
